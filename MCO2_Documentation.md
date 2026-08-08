@@ -27,8 +27,10 @@ The ICMP packet construction and checksum are reused from our MCO1 submission
 ip-api.com service and its City, Region, Country, and Organization (ISP) are shown
 beside the IP address.
 
-**Test environment:** Fedora Linux 44, Python 3.14.6. All tests were run with root
-privileges (`sudo`) because raw sockets require them.
+**Test environment:** Windows 11 (25H2), Python 3.12.10. All tests were run from an
+Administrator terminal because raw sockets require elevated privileges. Windows
+Defender Firewall was configured to allow inbound ICMP replies for the duration of
+the tests, per the assignment reminders.
 
 ---
 
@@ -36,7 +38,7 @@ privileges (`sudo`) because raw sockets require them.
 
 ### 2.1 Trace 1 — google.com
 
-Command: `sudo python3 traceroute.py google.com`
+Command: `python traceroute.py google.com`
 
 _[Insert screenshot here]_
 
@@ -47,7 +49,7 @@ as * * *, and the geolocation info displayed. Confirm the trace terminated with
 
 ### 2.2 Trace 2 — dlsu.instructure.com
 
-Command: `sudo python3 traceroute.py dlsu.instructure.com`
+Command: `python traceroute.py dlsu.instructure.com`
 
 _[Insert screenshot here]_
 
@@ -59,7 +61,7 @@ replies while the intermediate hops were still recorded.]_
 
 ### 2.3 Trace 3 — dlsu.edu.ph
 
-Command: `sudo python3 traceroute.py dlsu.edu.ph`
+Command: `python traceroute.py dlsu.edu.ph`
 
 _[Insert screenshot here]_
 
@@ -103,11 +105,11 @@ Section 2 screenshots]_
 
 **Tools used**
 
-- Operating System: Fedora Linux 44
-- Programming Language: Python 3.14.6
-- Terminal: Ptyxis
+- Operating System: Windows 11 (25H2)
+- Programming Language: Python 3.12.10
+- Terminal: _[e.g. Windows Terminal / Command Prompt (run as administrator)]_
 - Text editor / IDE: VS Code
-- Screenshot tool: GNOME Screenshot (built into Fedora)
+- Screenshot tool: _[e.g. Snipping Tool (Win+Shift+S)]_
 - AI assistant: Claude (Anthropic)
 
 **How AI was used**
