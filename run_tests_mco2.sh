@@ -20,7 +20,7 @@ LOGFILE="${SCRIPT_DIR}/traceroute_output.log"
 # The three hosts required by the MCO2 specification:
 HOST1="google.com"
 HOST2="dlsu.instructure.com"
-HOST3="dlsu.edu.ph"
+HOST3="www.dlsu.edu.ph"   # bare dlsu.edu.ph has no A record (verified with dig)
 
 banner() {
     echo ""                                                                 | tee -a "$LOGFILE"

@@ -154,7 +154,13 @@ def get_geo(ip):
 
 def get_route(hostname):
     """Trace the route to `hostname`, printing hop number, RTT, IP, and geo."""
-    destAddr = gethostbyname(hostname)
+    try:
+        destAddr = gethostbyname(hostname)
+    except gaierror as e:
+        print("traceroute: cannot resolve '%s': %s" % (hostname, e))
+        print("The domain may have no A (IPv4) record. If it has a 'www' "
+              "subdomain, try:  www.%s" % hostname)
+        return
     print("Traceroute to %s [%s], %d hops max:" % (hostname, destAddr, MAX_HOPS))
     print("")
 

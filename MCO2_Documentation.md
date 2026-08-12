@@ -27,10 +27,9 @@ The ICMP packet construction and checksum are reused from our MCO1 submission
 ip-api.com service and its City, Region, Country, and Organization (ISP) are shown
 beside the IP address.
 
-**Test environment:** Windows 11 (25H2), Python 3.12.10. All tests were run from an
-Administrator terminal because raw sockets require elevated privileges. Windows
-Defender Firewall was configured to allow inbound ICMP replies for the duration of
-the tests, per the assignment reminders.
+**Test environment:** Kali Linux, Python 3 _[fill in exact version from `python3
+--version`]_. All tests were run with root privileges (`sudo`) because raw sockets
+require them.
 
 ---
 
@@ -38,7 +37,7 @@ the tests, per the assignment reminders.
 
 ### 2.1 Trace 1 — google.com
 
-Command: `python traceroute.py google.com`
+Command: `sudo python3 traceroute.py google.com`
 
 _[Insert screenshot here]_
 
@@ -49,7 +48,7 @@ as * * *, and the geolocation info displayed. Confirm the trace terminated with
 
 ### 2.2 Trace 2 — dlsu.instructure.com
 
-Command: `python traceroute.py dlsu.instructure.com`
+Command: `sudo python3 traceroute.py dlsu.instructure.com`
 
 _[Insert screenshot here]_
 
@@ -59,15 +58,23 @@ reveal. Note: some cloud hosts do not answer ICMP Echo Requests — if the trace
 with repeated * * * rows up to 30 hops, state that the destination suppresses ICMP
 replies while the intermediate hops were still recorded.]_
 
-### 2.3 Trace 3 — dlsu.edu.ph
+### 2.3 Trace 3 — www.dlsu.edu.ph
 
-Command: `python traceroute.py dlsu.edu.ph`
+**Note on the target host:** The host specified in the requirements,
+`dlsu.edu.ph`, has no A (IPv4) record — verified with `dig +short dlsu.edu.ph A`,
+which returns nothing — so it cannot be resolved by any traceroute implementation
+(the program reports this cleanly and suggests the `www` subdomain). The trace was
+therefore performed against `www.dlsu.edu.ph`, the same site's web host.
+
+Command: `sudo python3 traceroute.py www.dlsu.edu.ph`
 
 _[Insert screenshot here]_
 
-**Description:** _[Describe results as above. As a Philippine host, the route should
-stay comparatively short and the geolocation should show Philippine networks —
-contrast this with the international routes of the other two traces.]_
+**Description:** _[Describe results: resolved IP, hops through PLDT (Philippines)
+and Hong Kong, completing at Cloudflare. Note that DLSU's website is served through
+Cloudflare's CDN, and geolocation databases often place anycast CDN addresses at the
+company's registered location rather than the physically nearest node — which is why
+the final hop may display a location such as Toronto, Canada.]_
 
 ---
 
@@ -105,11 +112,11 @@ Section 2 screenshots]_
 
 **Tools used**
 
-- Operating System: Windows 11 (25H2)
-- Programming Language: Python 3.12.10
-- Terminal: _[e.g. Windows Terminal / Command Prompt (run as administrator)]_
+- Operating System: Kali Linux
+- Programming Language: Python 3 _[exact version]_
+- Terminal: _[e.g. QTerminal / GNOME Terminal]_
 - Text editor / IDE: VS Code
-- Screenshot tool: _[e.g. Snipping Tool (Win+Shift+S)]_
+- Screenshot tool: _[e.g. GNOME Screenshot / flameshot]_
 - AI assistant: Claude (Anthropic)
 
 **How AI was used**

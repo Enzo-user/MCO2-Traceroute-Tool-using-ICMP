@@ -35,8 +35,8 @@ of the three ICMP message types that a traceroute must understand:
 
 ## Requirements
 
-- Linux (developed and tested on **Fedora Linux 44**)
-- **Python 3** (tested on Python 3.14.6); standard library only, no external packages
+- Linux (developed and tested on **Kali Linux**)
+- **Python 3**; standard library only, no external packages
 - **Root / administrator privileges** — raw sockets require them, so run with `sudo`
 - Internet access for the geolocation bonus (the trace itself works without it)
 
