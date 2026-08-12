@@ -6,6 +6,10 @@ Requests with an increasing time-to-live (TTL): each router that decrements the
 TTL to zero reveals itself with an ICMP Time Exceeded message, and the final
 destination ends the trace by answering with an ICMP Echo Reply.
 
+## Members
+[Sanidad, Christian Gabriel]
+[Suerte, Lorenzo Enrique]
+
 ## Overview
 
 The program builds on our MCO1 submission (Custom Ping Utility Using ICMP): the
