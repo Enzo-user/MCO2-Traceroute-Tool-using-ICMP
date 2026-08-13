@@ -6,10 +6,6 @@ Requests with an increasing time-to-live (TTL): each router that decrements the
 TTL to zero reveals itself with an ICMP Time Exceeded message, and the final
 destination ends the trace by answering with an ICMP Echo Reply.
 
-## Members
-[Sanidad, Christian Gabriel]
-[Suerte, Lorenzo Enrique]
-
 ## Overview
 
 The program builds on our MCO1 submission (Custom Ping Utility Using ICMP): the
@@ -139,9 +135,9 @@ that is normal, especially for cloud-hosted destinations that suppress ICMP.
 ## Deliverables
 
 - [x] Modified source code (`traceroute.py`)
-- [ ] Screenshots of the three traces (google.com, dlsu.instructure.com, dlsu.edu.ph)
-- [ ] Declaration of Tools and AI Use (with prompts)
-- [ ] References
+- [x] Screenshots of the three traces (`screenshots/`, embedded in the documentation PDF)
+- [x] Declaration of Tools and AI Use with prompts (in the documentation PDF)
+- [x] References (in the documentation PDF)
 
 ## References
 
