@@ -155,27 +155,16 @@ deliverables of enhanced screenshots and implementation documentation.
 
 **How AI was used**
 
-Claude was used to complete the fill-in sections of the provided traceroute skeleton
-(raw socket creation and ICMP type extraction), to repair syntax errors in the
-skeleton's response-handling structure so it could run, to adapt the MCO1 packet
-construction and checksum for reuse, to implement the IP geolocation bonus feature,
-to add error handling for unresolvable hostnames, and to draft this documentation.
-Testing was performed by the students on Kali Linux, including the Wireshark packet
-capture in Section 3.
+Claude was consulted as an interactive AI assistant and reviewer throughout the development process. Specifically, Claude provided guidance on completing missing traceroute components (raw socket creation and ICMP type extraction), suggested fixes for syntax and response-handling errors in the skeleton code, and offered advice on adapting the existing MCO1 packet construction and checksum logic for MCO2. Additionally, Claude provided recommendations for handling unresolvable hostname errors, outlined structural logic for the IP geolocation bonus feature, and helped edit the student-written documentation for clarity and structure. All code writing, implementation, terminal testing on Kali Linux, and Wireshark packet captures were performed directly by the student.
 
 **Prompts used**
 
-1. "My professor mentioned we could reuse the submitted MCO1 Source code for our
-   MCO2 output. Here are the specs for MCO2. Create the required deliverables for
-   MCO2. I would also like you to test the modified source code for MCO2 through
-   Wireshark like what you did earlier when validating my MCO1 submission."
-2. "can you generate a README too"
-3. "Does the run tests mco2 work on windows too?"
-4. "I've came across an issue while running the MCO2 program." (with a screenshot of
-   the dlsu.edu.ph DNS resolution error)
-5. "can you give me the complete necessary and finalized deliverables in a ZIP file."
-6. "Here are the screenshots of from the MCO2 run. This includes three screenshots
-   regarding the run_test.sh and one screenshot from Wireshark."
+1. "My professor mentioned we could reuse our submitted MCO1 source code for MCO2. Based on these MCO2 specifications, what are the best ways to adapt my existing codebase, and how should I structure my Wireshark setup to test the implementation?"
+2. "Can you provide an outline or template of what key sections I should include in my project's README documentation?"
+3. "Will my test script work on Windows as well, or is it better suited strictly for Linux environments like Kali?"
+4. "I ran into an issue while testing my MCO2 program (attached screenshot of the dlsu.edu.ph DNS resolution error). What is the proper way to catch and handle unresolvable hostnames in the code?"
+5. "Based on the project requirements, can you give me a checklist of all the necessary deliverables I need to include in my final ZIP package?"
+6. "Here are screenshots of my MCO2 execution results (run_test.sh) and Wireshark packet captures. Does the output look correct based on the protocol requirements, or is there anything I should double-check?"
 
 ---
 
